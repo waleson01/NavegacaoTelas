@@ -16,10 +16,10 @@ namespace AppNavegacaoTelas
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
-            ImgOK.Source = ImageSource.FromResource("AppNavegacaoTelas2.img.ok.jpg");
+            ImgOK.Source = ImageSource.FromResource("AppNavegacaoTelas.img.ok.jpg");
         }
 
-        private void btn_clicar(object sender, EventArgs e)
+        private async void btn_clicar(object sender, EventArgs e)
         {
             await Navigation.PopAsync();
         }

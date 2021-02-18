@@ -29,8 +29,8 @@ namespace AppNavegacaoTelas
                         Usuario = etyusuario.Text
                     };
 
-                    etysenha = "";
-                    etyusuario = "";
+                    etysenha.Text = "";
+                    etyusuario.Text = "";
 
                     var parametros = new Pagina2();
                     parametros.BindingContext = dados;
@@ -38,11 +38,11 @@ namespace AppNavegacaoTelas
 
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 await DisplayAlert("Erro!", "Usuario ou senhas incorreto", "OK!");
-                etysenha = " ";
-                etyusuario = " ";
+                etysenha.Text = "";
+                etyusuario.Text = "";
             }
         }
     }
