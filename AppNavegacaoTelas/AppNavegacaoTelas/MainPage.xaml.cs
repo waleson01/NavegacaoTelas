@@ -13,6 +13,37 @@ namespace AppNavegacaoTelas
         public MainPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
+            imgUsuario.Source = ImageSource.FromResource("AppNavegacaoTelas.img.usuario.jpg");
+        }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            try
+            {
+                if ((etysenha.Text.Equals("1234a")) && (etyusuario.Text.Equals("Waleson")))
+                {
+                    var dados = new Dados
+                    {
+                        Senha = etysenha.Text,
+                        Usuario = etyusuario.Text
+                    };
+
+                    etysenha = "";
+                    etyusuario = "";
+
+                    var parametros = new Pagina2();
+                    parametros.BindingContext = dados;
+                    await Navigation.PushAsync(parametros);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Erro!", "Usuario ou senhas incorreto", "OK!");
+                etysenha = " ";
+                etyusuario = " ";
+            }
         }
     }
 }

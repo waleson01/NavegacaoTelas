@@ -3,22 +3,54 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppNavegacaoTelas.MainPage">
 
-    <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-        </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
-    </StackLayout>
+    <Grid x:Name="G1" RowSpacing="1" ColumnSpacing="10" Padding="10">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50" />
+            <ColumnDefinition Width="50" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Label x:Name="lblTitulo" Text="LOGIN"
+               Grid.Row="0" Grid.ColumnSpan="4"
+               Style="{StaticResource Titulo}" />
+
+        <Image x:Name="imgUsuario"
+               Grid.Row="1" Grid.RowSpan="4" Grid.Column="2" Grid.ColumnSpan="2"
+               Aspect="Fill" />
+
+        <Label x:Name="lblusurario" Text="Usuario:"
+               Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2"
+               Style="{StaticResource Texto1}" />
+
+        <Entry x:Name="etyusuario" Placeholder="Informe seu usuario"
+               Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" />
+
+        <Label x:Name="lblsenha" Text="Senha:"
+               Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2"
+               Style="{StaticResource Texto1}" />
+
+        <Entry x:Name="etysenha" Placeholder="Informe sua senha" IsPassword="True"
+               Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" />
+
+        <Button Text="Acessar" Clicked="Button_Clicked"
+                Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="4"
+                Style="{StaticResource Botao}"/>
+
+    </Grid>
+    
 
 </ContentPage>
